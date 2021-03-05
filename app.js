@@ -12,9 +12,11 @@ function Sum(a, b) {
     let sum1=a+b
     let arr=[sum1,'the sum of  '+a +' and  ' + b]
     console.log(arr);
+    document.getElementById("demo").innerHTML = 'Sum ('+sum1+')' ;
     return;
 
 }
+
 
 // Here is the test for sum(); uncomment it to run it
 Sum(4, 7);
@@ -34,6 +36,7 @@ function multiply(a, b) {
     let multi=a*b
     let arr=[multi,'the product of  '+a +' and  ' + b]
     console.log(arr);
+    document.getElementById("demo2").innerHTML = 'multiply ('+multi+')' ;
     return;
 
 }
@@ -60,6 +63,7 @@ function sumAndMultiply(a, b, c) {
     let multi=a*b*c
     let arr=[sum1,multi,a + ' and '+ b+ ' and '+ c+ ' sum to '+sum1,'The product of '+ a+ ' and '+ b+ 'and' +c+ 'is '+multi]
     console.log(arr);
+    document.getElementById("demo3").innerHTML = 'sumAndMultiply ('+sum1 +'& '+ multi +')' ;
     return;
 
 }
@@ -86,7 +90,9 @@ function sumArray(sumArr) {
     let sum1=testArray[0]+testArray[1]+testArray[2]
     let arr=[sum1,testArray[0]+' '+testArray[1]+' '+testArray[2] +' '+' was passed in as an array of numbers, and '+ sum1+ ' is their sum']
     console.log(arr);
+    document.getElementById("demo4").innerHTML = 'sumArray ('+sum1+')' ;
     return;
+    
 }
 
 // Here is the test for sumArray(); uncomment it to run it
@@ -110,6 +116,7 @@ function multiplyArray(multArr) {
     let multi=testArray[0]*testArray[1]*testArray[2]
     let arr=[multi,'The numbers '+testArray[0]+' '+testArray[1]+' '+testArray[2] +' '+' have a product of '+ multi]
     console.log(arr);
+    document.getElementById("demo5").innerHTML = 'multiplyArray ('+multi+')' ;
     return;
 
 }
@@ -137,12 +144,20 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 var testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
-
-function multiplyAnyArray(dynamicArray) { //eslint-disable-line
-
+let total=1
+function multiplyAnyArray(dynamicArray) { 
+    for (let i=0;i<testDynamicArray.length;++i){
+    total *= testDynamicArray[i]
+    // let arr=[total,'The numbers '+testDynamicArray[i]+' have a product '+ total]
+    }
+    let arr=[,total,' The numbers ' +testDynamicArray  +' have a product '+ total]
+    console.log(arr);
+    document.getElementById("demo6").innerHTML = 'multiplyAnyArray ('+total+')' ;
+    return;
+    
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyAnyArray(testDynamicArray);
+multiplyAnyArray(testDynamicArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
